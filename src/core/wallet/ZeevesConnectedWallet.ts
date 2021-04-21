@@ -3,15 +3,15 @@ import { WalletProvider } from "zilswap-sdk";
 import { Network } from "zilswap-sdk/lib/constants";
 import { ConnectedWallet, WalletAccountInfo, WalletConnectType } from "./ConnectedWallet";
 
-export interface ZilPayConnectProps {
-  zilpay: WalletProvider;
+export interface ZeevesConnectProps {
+  zeeves: WalletProvider;
   network: Network;
   timestamp?: moment.Moment;
   bech32: string;
-  base16: string;
+  byte20: string;
 };
-export class ZilPayConnectedWallet implements ConnectedWallet {
-  type = WalletConnectType.ZilPay;
+export class ZeevesConnectedWallet implements ConnectedWallet {
+  type = WalletConnectType.Zeeves;
 
   provider: WalletProvider;
   network: Network;
@@ -19,14 +19,14 @@ export class ZilPayConnectedWallet implements ConnectedWallet {
   timestamp: moment.Moment;
   addressInfo: WalletAccountInfo;
 
-  constructor(props: ZilPayConnectProps) {
-    console.log('ZilPay props - ' + JSON.stringify(props));
-    this.provider = props.zilpay;
+  constructor(props: ZeevesConnectProps) {
+    console.log('Zeeves props - ' + JSON.stringify(props));
+    this.provider = props.zeeves;
     this.network = props.network;
     this.timestamp = props.timestamp || moment();
     this.addressInfo = {
       bech32: props.bech32,
-      byte20: props.base16,
+      byte20: props.byte20,
     };
   }
 }

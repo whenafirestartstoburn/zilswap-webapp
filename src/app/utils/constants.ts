@@ -31,6 +31,10 @@ export const ZilPayNetworkMap = {
   testnet: Network.TestNet,
 } as { [index: string]: Network };
 
+export const ZeevesNetworkMap = {
+  mainnet: Network.MainNet,
+} as { [index: string]: Network };
+
 export const RPCEndpoints: { [key in Network]: string } = {
   [Network.MainNet]: 'https://api2.zilliqa.com',
   [Network.TestNet]: 'https://dev-api.zilliqa.com'
