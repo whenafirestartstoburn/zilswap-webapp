@@ -280,7 +280,7 @@ export const AppButler: React.FC<AppButlerProps> = (props: AppButlerProps) => {
     });
   };
 
-  const processWalletResult = async (walletResult: ConnectWalletResult | undefined) : void => {
+  const processWalletResult = async (walletResult: ConnectWalletResult | undefined) => {
     const storeState: RootState = store.getState();
     if (walletResult?.wallet) {
       const { wallet } = walletResult;
@@ -304,7 +304,7 @@ export const AppButler: React.FC<AppButlerProps> = (props: AppButlerProps) => {
         })
       );
     }
-    
+
     initZilswap();
   }
 

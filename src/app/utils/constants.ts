@@ -17,6 +17,7 @@ export const LoadingKeys = {
 export const LocalStorageKeys = {
   PrivateKey: "zilswap:private-key",
   ZilPayConnected: "zilswap:zilpay-connected",
+  ZeevesConnected: "zilswap:zeeves-connected",
   Network: "zilswap:network",
   UserTokenList: "zilswap:user-token-list",
 };
