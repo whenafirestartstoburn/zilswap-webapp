@@ -32,13 +32,13 @@ const AppContainer: React.FC = () => {
 
   return (
     <ThemeProvider theme={theme}>
+      <Zeeves />
       <AppButler />
       <CssBaseline />
       <MuiPickersUtilsProvider utils={MomentUtils}>
         <Router history={history}>
           <ScrollReset />
           <GoogleAnalytics />
-          <Zeeves />
           {renderRoutes(routes)}
         </Router>
       </MuiPickersUtilsProvider>

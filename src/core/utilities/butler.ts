@@ -312,7 +312,7 @@ export const AppButler: React.FC<AppButlerProps> = (props: AppButlerProps) => {
     logger("butler", "initWithZeeves");
     runInitWallet(async () => {
       let walletResult: ConnectWalletResult | undefined;
-      const zeeves = await getConnectedZilPay();
+      const zeeves = await getConnectedZeeves();
       if (zeeves) {
         try {
           walletResult = await connectWalletZeeves(zeeves);
