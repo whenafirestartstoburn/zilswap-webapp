@@ -20,7 +20,6 @@ export class ZeevesConnectedWallet implements ConnectedWallet {
   addressInfo: WalletAccountInfo;
 
   constructor(props: ZeevesConnectProps) {
-    console.log('Zeeves props - ' + JSON.stringify(props));
     this.provider = props.zeeves;
     this.network = props.network;
     this.timestamp = props.timestamp || moment();

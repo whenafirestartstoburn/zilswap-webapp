@@ -72,8 +72,9 @@ const ConnectWallet: React.FC<ConnectWalletProps & React.HTMLAttributes<HTMLDivE
           <br />Download ZilPay{" "}
           <Link rel="noopener noreferrer" target="_blank" href="https://chrome.google.com/webstore/detail/zilpay/klnaejjgbibmhlephnhpmaofohgkpgkd">here</Link>.
           <br />
-          <br />Or try telegram Zilliqa wallet - {" "}
-          <Link rel="noopener noreferrer" target="_blank" href="https://t.me/zilliqawalletbot">Zeeves</Link>.
+          <br />Or try{" "} 
+          <Link rel="noopener noreferrer" target="_blank" href="https://t.me/zilliqawalletbot">Zeeves</Link>
+          a Telegram-based wallet.
         </Typography>
       </DialogContent>
     </Box>

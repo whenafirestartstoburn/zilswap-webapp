@@ -20,7 +20,6 @@ export class ZilPayConnectedWallet implements ConnectedWallet {
   addressInfo: WalletAccountInfo;
 
   constructor(props: ZilPayConnectProps) {
-    console.log('ZilPay props - ' + JSON.stringify(props));
     this.provider = props.zilpay;
     this.network = props.network;
     this.timestamp = props.timestamp || moment();
