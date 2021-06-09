@@ -55,17 +55,19 @@ export const claim = async (claimOpts: ClaimEpochOpts): Promise<ObservedTx> => {
   const { network, wallet, epochNumber, proof, amount } = claimOpts;
   const zilswap = ZilswapConnector.getSDK()
 
-  if (!zilswap.zilliqa) throw new Error("Wallet not connected");
+  const zilliqa = zilswap['walletProvider'] || zilswap.zilliqa;
+
+  if (!zilliqa) throw new Error("Wallet not connected");
 
   const contractAddr = DIST_CONTRACT[network]
   const chainId = CHAIN_ID[network];
-  const distContract = zilswap.zilliqa.contracts.at(fromBech32Address(contractAddr));
+  const distContract = zilliqa.contracts.at(fromBech32Address(contractAddr));
 
   const address = wallet.addressInfo.byte20;
 
   const args: any = getTxArgs(epochNumber, proof, address, amount, contractAddr);
 
-  const minGasPrice = (await zilswap.zilliqa.blockchain.getMinimumGasPrice()).result as string;
+  const minGasPrice = (await zilliqa.blockchain.getMinimumGasPrice()).result as string;
   const params: any = {
     amount: new BN(0),
     gasPrice: new BN(minGasPrice),
